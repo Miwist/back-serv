@@ -66,9 +66,12 @@ app.post('/',(req, res) => {
   if (!req.body) {
     return res.sendStatus(400);
   }
-  res.send('Ответы сохранены')
-  addData(req.body.question_1, req.body.question_2, req.body.question_3)
-  console.log(req.body)
+  if (req.body.question_1,req.body.question_2,req.body.question_3) {
+    addData(req.body.question_1, req.body.question_2, req.body.question_3)
+    res.send('Ответы сохранены')
+  } else {
+    res.send('Заполните пустые поля')
+  }
 });
 
 app.listen(port, host, () => {
