@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const process = require('dotenv').config()
 const http = require("http");
-const port = 5432;
+const port = 8080;
 const host = "185.154.193.21";
 const urlencodedParser = express.urlencoded({ extended: false }); 
 const { Pool } = require('pg');
@@ -12,7 +12,7 @@ const pool = new Pool({
   host: host,
   database:  process.DB_NAME,
   password:  process.DB_PASSWORD,
-  port: port,
+  port: 5432,
 });
 
 // Создание таблицы
